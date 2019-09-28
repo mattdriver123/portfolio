@@ -1,27 +1,27 @@
 <template>
   <div id="app">
     <section>
-      <h1>Matthew Driver</h1>
+      <h1 style="font-size: 3rem; margin-bottom: 24px;">Matthew Driver</h1>
       <p><i>
-        About Me
+        Professional web developer with a master's degree in computing and 4+ years experience in a fast-growing agile startup.
       </i></p>
     </section>
     <section>
       <h2>Skills</h2>
-      <ul style="list-style: none; padding: 0;">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JS</li>
-        <li>Bootstrap</li>
-        <li>jQuery</li>
-        <li>Node.js</li>
-        <li>Webpack</li>
-        <li>Vue.js</li>
-        <li>Python</li>
-        <li>Flask</li>
-        <li>Jinja2</li>
-        <li>Nginx</li>
-        <li>Docker</li>
+      <ul class="pills">
+        <li class="pill">HTML5</li>
+        <li class="pill">CSS3</li>
+        <li class="pill">JavaScript</li>
+        <li class="pill">Bootstrap 3</li>
+        <li class="pill">jQuery</li>
+        <li class="pill">Node.js</li>
+        <li class="pill">Webpack</li>
+        <li class="pill">Vue.js</li>
+        <li class="pill">Python</li>
+        <li class="pill">Flask</li>
+        <li class="pill">Jinja2</li>
+        <li class="pill">Nginx</li>
+        <li class="pill">Docker</li>
       </ul>
     </section>
     <section>
@@ -35,9 +35,15 @@
     </section>
     <section>
       <h2>Contact</h2>
-      <div>Email: <a href="mailto:matt@mattdriver.me.uk">matt@mattdriver.me.uk</a></div>
-      <div>Github: <a href="https://github.com/mattdriver123" target="_blank">https://github.com/mattdriver123</a></div>
-      <div>LinkedIn: <a href="https://www.linkedin.com/in/matthew-driver" target="_blank">https://www.linkedin.com/in/matthew-driver</a></div>
+      <a class="icon-circle" href="mailto:matt@mattdriver.me.uk">
+        <i class="fa fa-envelope fa-2x"></i>
+      </a>
+      <a class="icon-circle" href="https://github.com/mattdriver123" target="_blank">
+        <i class="fa fa-github fa-inverse fa-2x"></i>
+      </a>
+      <a class="icon-circle" href="https://www.linkedin.com/in/matthew-driver" target="_blank">
+        <i class="fa fa-linkedin fa-2x"></i>
+      </a>
     </section>
     <section>
       <p>This site was designed and built by me, using Vue.js</p>
@@ -71,6 +77,35 @@ body {
 #app {
   text-align: center;
 }
+#app h2 {
+  margin-bottom: 24px;
+}
+#app .pills {
+  list-style: none;
+  padding: 0;
+  width: 50%;
+}
+#app .pills .pill {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #444;
+  margin: 4px;
+  border-radius: 4px;
+}
+#app .icon-circle {
+  background: #444;
+  color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  line-height: 83px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 15px;
+}
+#app .icon-circle:hover {
+  background: #555;
+}
 section {
   padding: 100px;
 }
@@ -84,7 +119,7 @@ section:nth-child(even) {
   box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.15);
 }
 section > * {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 </style>
