@@ -1,11 +1,6 @@
 <template>
   <div id="app">
-    <section>
-      <h1 style="font-size: 3rem; margin-bottom: 24px;">Matthew Driver</h1>
-      <p><i>
-        Professional web developer with a master's degree in computing and 4+ years experience in a fast-growing agile startup.
-      </i></p>
-    </section>
+    <hero-screen></hero-screen>
     <section>
       <h2>Skills</h2>
       <ul class="pills">
@@ -26,15 +21,23 @@
     </section>
     <section>
       <h2>Experience</h2>
-      <h3>Egress Software Technologies</h3>
-      <h4>Sep 2016 - Present - Software Developer</h4>
-      <h4>Jan 2016 - Sep 2016 - UI/UX Developer</h4>
-      <h4>Feb 2015 - Jan 2016 - QA Engineer</h4>
-      <h3>Sheffield Hallam University</h3>
-      <h4>Nov 2013 - May 2014 - Computer Programming Mentor</h4>
+      <div style="text-align: center;">
+        <h3>Egress Software Technologies</h3>
+        <h4>Sep 2016 - Present - Software Developer</h4>
+        <h4>Jan 2016 - Sep 2016 - UI/UX Developer</h4>
+        <h4>Feb 2015 - Jan 2016 - QA Engineer</h4>
+        <h3>Sheffield Hallam University</h3>
+        <h4>Nov 2013 - May 2014 - Computer Programming Mentor</h4>
+      </div>
     </section>
     <section>
-      <h2>Contact</h2>
+      <h2>Education</h2>
+      <div style="text-align: center;">
+        <h3>Sheffield Hallam University</h3>
+        <h4>Sep 2008 - Jun 2014 - MComp Games Software Development</h4>
+      </div>
+    </section>
+    <section style="text-align: center;">
       <a class="icon-circle" href="mailto:matt@mattdriver.me.uk">
         <i class="fa fa-envelope fa-2x"></i>
       </a>
@@ -45,24 +48,33 @@
         <i class="fa fa-linkedin fa-2x"></i>
       </a>
     </section>
-    <section>
+    <section style="text-align: center;">
       <p>This site was designed and built by me, using Vue.js</p>
+      <p>Copyright &copy; Matthew Driver {{ current_year }}</p>
     </section>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HeroScreen from './components/HeroScreen.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HeroScreen
+  },
+  computed: {
+    current_year() {
+      return new Date().getFullYear();
+    }
   }
 }
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+}
 body {
   padding: 0;
   margin: 0;
@@ -73,9 +85,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+
+  overflow: hidden;
 }
 #app {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
 }
 #app h2 {
   margin-bottom: 24px;
@@ -83,7 +100,6 @@ body {
 #app .pills {
   list-style: none;
   padding: 0;
-  width: 50%;
 }
 #app .pills .pill {
   display: inline-block;
